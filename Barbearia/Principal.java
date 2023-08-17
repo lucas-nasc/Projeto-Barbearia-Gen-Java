@@ -4,6 +4,7 @@ import Barbearia.controler.Controller;
 import Barbearia.model.Cliente;
 import Barbearia.util.Cores;
 
+import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -90,6 +91,7 @@ public class Principal {
                                     System.out.println("Dia: " + dia + " Horario:" + horario);
                                     barbearia.cadastrar(new Cliente(dia, horario, preco, tipo, pedido, nome));
 
+                                    keyPress();
                                     break;
                                 case 2:
                                     preco = 40.0f;
@@ -111,6 +113,8 @@ public class Principal {
                                     horario = leia.next();
                                     System.out.println("Dia: " + dia + " Horario:" + horario);
                                     barbearia.cadastrar(new Cliente(dia, horario, preco, tipo, pedido, nome));
+
+                                    keyPress();
                                     break;
                                 case 3:
                                     preco = 50.0f;
@@ -132,6 +136,8 @@ public class Principal {
                                     horario = leia.next();
                                     System.out.println("Dia: " + dia + " Horario:" + horario);
                                     barbearia.cadastrar(new Cliente(dia, horario, preco, tipo, pedido, nome));
+
+                                    keyPress();
                                     break;
                                 default:
                                     System.out.println("Opção Invalida!");
@@ -165,6 +171,8 @@ public class Principal {
                                     horario = leia.next();
                                     System.out.println("Dia: " + dia + " Horario:" + horario);
                                     barbearia.cadastrar(new Cliente(dia, horario, preco, tipo, pedido, nome));
+
+                                    keyPress();
                                     break;
                                 case 2:
                                     preco = 80.0f;
@@ -186,6 +194,8 @@ public class Principal {
                                     horario = leia.next();
                                     System.out.println("Dia: " + dia + " Horario:" + horario);
                                     barbearia.cadastrar(new Cliente(dia, horario, preco, tipo, pedido, nome));
+
+                                    keyPress();
                                     break;
                                 default:
                                     System.out.println("Opção invalida");
@@ -218,6 +228,8 @@ public class Principal {
                                     horario = leia.next();
                                     System.out.println("Dia: " + dia + " Horario:" + horario);
                                     barbearia.cadastrar(new Cliente(dia, horario, preco, tipo, pedido, nome));
+
+                                    keyPress();
                                     break;
                                 case 2:
                                     preco = 80.0f;
@@ -239,6 +251,8 @@ public class Principal {
                                     horario = leia.next();
                                     System.out.println("Dia: " + dia + " Horario:" + horario);
                                     barbearia.cadastrar(new Cliente(dia, horario, preco, tipo, pedido, nome));
+
+                                    keyPress();
                                     break;
                                 default:
                                     System.out.println("Opção invalida!");
@@ -254,6 +268,7 @@ public class Principal {
                     barbearia.listarTodas();
                     System.out.println("\n");
 
+                    keyPress();
                     break;
                 case 3:
                     System.out.println("Apagar Horario");
@@ -262,6 +277,8 @@ public class Principal {
                     nome = leia.nextLine().toUpperCase();
 
                     barbearia.deletar(nome);
+
+                    keyPress();
                     break;
                 case 4:
                     System.out.println("Atualizar Dados do cliente");
@@ -283,6 +300,7 @@ public class Principal {
                         System.out.println("Cliente não encontrado");
                     }
 
+                    keyPress();
                     break;
 
                 case 5:
@@ -291,6 +309,8 @@ public class Principal {
                     nome = leia.nextLine().toUpperCase();
 
                     barbearia.procurarNome(nome);
+
+                    keyPress();
                     break;
 
                 case 6:
@@ -303,6 +323,15 @@ public class Principal {
                 default:
                     System.out.println("Opção invalida");
             }
+
+        }
+    }
+    public static void keyPress() {
+        try {
+            System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar ...");
+            System.in.read();
+        } catch (IOException e) {
+            System.out.println("Você presssionou uma tecla diferente de enter!");
         }
 
     }
