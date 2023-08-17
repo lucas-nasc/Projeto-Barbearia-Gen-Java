@@ -56,13 +56,13 @@ public abstract class Barbearia {
         this.pedido = pedido;
     }
 
-    public void visualizar(){
+    public void visualizar() {
         String tipo = " ";
 
-        switch (this.tipo){
+        switch (this.tipo) {
             case 1:
                 tipo = "Corte de cabelo";
-                switch (pedido){
+                switch (pedido) {
                     case 1:
                         System.out.println("Corte");
                         preco = preco;
@@ -79,7 +79,7 @@ public abstract class Barbearia {
                 break;
             case 2:
                 tipo = "Luzes";
-                switch (pedido){
+                switch (pedido) {
                     case 1:
                         System.out.println("Luzes normal");
                         preco = preco;
@@ -92,7 +92,7 @@ public abstract class Barbearia {
                 break;
             case 3:
                 tipo = "Progressiva";
-                switch (pedido){
+                switch (pedido) {
                     case 1:
                         System.out.println("Botox");
                         preco = preco;

@@ -12,10 +12,10 @@ public class Controller implements Barbeariarepository {
 
     @Override
     public void listarTodas() {
-        if (listaClientes.isEmpty()){
+        if (listaClientes.isEmpty()) {
             System.out.println("Nenhum cliente cadastrado");
         }
-        for (var cliente:listaClientes) {
+        for (var cliente : listaClientes) {
             System.out.println("\n");
             cliente.visualizar();
             System.out.println("****************************************");
@@ -33,10 +33,10 @@ public class Controller implements Barbeariarepository {
     @Override
     public void deletar(String nome) {
         var cliente = buscaNaLista(nome);
-        if (cliente!= null){
-            if (listaClientes.remove(cliente) ==true)
-                System.out.println("O cliente " +  nome + " Foi deletado com sucesso");
-        }else
+        if (cliente != null) {
+            if (listaClientes.remove(cliente) == true)
+                System.out.println("O cliente " + nome + " Foi deletado com sucesso");
+        } else
             System.out.println("\nO cliente: " + nome + " não foi encontrado");
     }
 
@@ -44,10 +44,10 @@ public class Controller implements Barbeariarepository {
     public void atualizar(Cliente cliente) {
         var buscaCliente = buscaNaLista(cliente.getNome());
 
-        if (buscaCliente != null){
-            listaClientes.set(listaClientes.indexOf(buscaCliente),cliente);
+        if (buscaCliente != null) {
+            listaClientes.set(listaClientes.indexOf(buscaCliente), cliente);
             System.out.println("\nO cliente " + cliente.getNome() + "Foi Atualizado com sucesso");
-        }else {
+        } else {
             System.out.println("\nO cliente: " + cliente.getNome() + "não foi encontrado");
         }
 
@@ -57,16 +57,16 @@ public class Controller implements Barbeariarepository {
     public void procurarNome(String nome) {
         var cliente = buscaNaLista(nome);
 
-        if (cliente!= null)
+        if (cliente != null)
             cliente.visualizar();
         else
             System.out.println("\nO " + nome + "não existe");
 
     }
 
-    public Cliente buscaNaLista(String nome){
-        for (var cliente:listaClientes) {
-            if (cliente.getNome().equalsIgnoreCase(nome)){
+    public Cliente buscaNaLista(String nome) {
+        for (var cliente : listaClientes) {
+            if (cliente.getNome().equalsIgnoreCase(nome)) {
                 return cliente;
             }
         }

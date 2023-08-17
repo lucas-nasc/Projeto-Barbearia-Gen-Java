@@ -1,6 +1,6 @@
 package Barbearia.model;
 
-public class Cliente extends Barbearia{
+public class Cliente extends Barbearia {
     private String nome;
 
     public Cliente(String dia, String horario, float preco, int tipo, int pedido, String nome) {
@@ -16,7 +16,7 @@ public class Cliente extends Barbearia{
         this.nome = nome;
     }
 
-    public void visualizar(){
+    public void visualizar() {
         super.visualizar();
         System.out.println("Nome do cliente: " + this.nome);
     }
